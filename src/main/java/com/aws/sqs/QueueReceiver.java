@@ -16,7 +16,7 @@ public class QueueReceiver {
 	public List<String> getMessages() {
 		List<String> messages = new ArrayList<>();
 
-		SqsClient sqsClient = SqsClient.builder().region(Region.AP_SOUTH_1)
+		SqsClient sqsClient = SqsClient.builder().region(Region.US_EAST_1)
 				.credentialsProvider(ProfileCredentialsProvider.create("default")).build();
 		GetQueueUrlRequest getQueueUrlRequest = GetQueueUrlRequest.builder().queueName(queueName).build();
 		String queueUrl = sqsClient.getQueueUrl(getQueueUrlRequest).queueUrl();
