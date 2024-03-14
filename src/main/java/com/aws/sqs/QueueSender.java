@@ -11,7 +11,7 @@ public class QueueSender {
 	private final String queueName = "PaymentQueue";
 
 	public void sendMessage(String message) {
-		SqsClient sqsClient = SqsClient.builder().region(Region.AP_SOUTH_1)
+		SqsClient sqsClient = SqsClient.builder().region(Region.US_EAST_1)
 				.credentialsProvider(ProfileCredentialsProvider.create("default")).build();
 		CreateQueueRequest request = CreateQueueRequest.builder().queueName(queueName).build();
 		sqsClient.createQueue(request);
